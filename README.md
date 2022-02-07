@@ -2,7 +2,9 @@
 ## How to use?
 #### MemoryHelper - Code Example
 ```c#
-public class ExampleForMHelper 
+using MemoryUtil;
+
+public class ExampleForMemoryHelper 
 {
     private void example()
     {
@@ -29,6 +31,28 @@ public class ExampleForMHelper
         helper.FreezePointer("WallHack2", 0x123456, MemoryHelper.DataType.FLOAT, "0");
 
         helper.UnFreeze("WallHack1", "WallHack2"); // unfreeze
+    }
+}
+```
+-Easy for using
+-Simple Functions
+
+#### MemoryScanner - Code Example
+```c#
+using MemoryUtil;
+
+public class ExampleForMemoryScanner
+{
+    private void example()
+    {
+        Process p = Process.GetProcessesByName("ldboxheadless"/*your process name*/).First();
+
+        MemoryScanner scanner = new MemoryScanner((uint)p.Id);
+        var result = scanner.AoBScan("12 34 56 ?? 99 11 AA BB ?? ?? FD");
+        var result2 scanner.AoBScan(new byte[] {0x00, 0x12, 0x34, 0x56});
+        for(var address in result) {
+            // TODO
+        }
     }
 }
 ```
