@@ -1,7 +1,7 @@
 # ONLY SUPPORT 32Bits Game
 ## How to use?
 #### MemoryHelper - Code Example
-```
+```c#
 public class ExampleForMHelper 
 {
     private void example()
