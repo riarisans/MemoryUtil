@@ -50,7 +50,7 @@ public class ExampleForMemoryScanner
         MemoryScanner scanner = new MemoryScanner((uint)p.Id);
         var result = scanner.AoBScan("12 34 56 ?? 99 11 AA BB ?? ?? FD");
         var result2 = scanner.AoBScan(new byte[] {0x00, 0x12, 0x34, 0x56});
-        for(var address in result) {
+        foreach(var address in result) {
             // TODO
         }
     }
